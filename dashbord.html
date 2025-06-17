@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Admin Dashbord</title>
+        <link rel="stylesheet" href="dashbord.css">
+    </head>
+    <body>
+        <div class="dashbord-container">
+            <p id="welcomeUser"></p>
+            <h1>Welcome to Coffee Shop</h1>
+            <button id="logoutBtn">Logout</button>
+            <p>you can manage orders, view customers, and more!</p>
+
+            <div class="order-section">
+                <h2>Today's orders</h2>
+                <ul>
+                    <li>Order 1: Latte - 2 Cups</li>
+                    <li>Order 2: Espreso - 3 Cups</li>
+                    <li>Order 1: Cappuccino - 2 Cups</li>
+                </ul>
+            </div>
+
+        </div>
+
+         <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = localStorage.getItem("loggedInUser");
+            const welcomeText = document.getElementById("welcomeUser");
+
+            if (username) {
+                welcomeText.textContent = `Welcome, ${username}`;
+            } else {
+                window.location.href = "index.html";
+            }
+
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                localStorage.removeItem("loggedInUser");
+                window.location.href = "index.html";
+            });
+        });
+    </script>
+    </body>
+</html>
