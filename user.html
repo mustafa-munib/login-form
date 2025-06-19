@@ -1,0 +1,31 @@
+<html>
+<head>
+    <title>User Dashboard - Coffee Shop</title>
+    <link rel="stylesheet" href="dashbord.css">
+</head>
+<body>
+    <div class="dashbord-container">
+        <p id="welcomeUser"></p>
+        <h1>Welcome to Coffee Shop</h1>
+        <button id="logoutBtn">Logout</button>
+        <p>This is the user dashboard. You can view your orders and profile here.</p>
+    </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const username = localStorage.getItem("loggedInUser");
+            const role = localStorage.getItem("userRole");
+            const welcomeText = document.getElementById("welcomeUser");
+            if (username && role === "user") {
+                welcomeText.textContent = `Welcome, ${username}`;
+            } else {
+                window.location.href = "index.html";
+            }
+            document.getElementById("logoutBtn").addEventListener("click", function () {
+                localStorage.removeItem("loggedInUser");
+                localStorage.removeItem("userRole");
+                window.location.href = "logout.html";
+            });
+        });
+    </script>
+</body>
+</html> 

@@ -1,0 +1,29 @@
+<html>
+<head>
+    <title>Register - Coffee Shop</title>
+    <link rel="stylesheet" href="coffee.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+
+            <label for="role">Role:</label>
+            <select id="role" name="role">
+                <option value="user">User</option>
+                <option value="admin">Admin</option>
+            </select><br><br>
+
+            <button type="submit">Register</button>
+        </form>
+        <p id="registerMessage"></p>
+        <p>Already have an account? <a href="index.html">Login here</a></p>
+    </div>
+    <script src="register.js"></script>
+</body>
+</html> 

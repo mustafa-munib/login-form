@@ -1,0 +1,18 @@
+<html>
+<head>
+    <title>Logout - Coffee Shop</title>
+    <link rel="stylesheet" href="coffee.css">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Logging out...</h2>
+        <p id="logoutMessage">You are being logged out.</p>
+    </div>
+    <script>
+        localStorage.removeItem("loggedInUser");
+        setTimeout(() => {
+            window.location.href = "index.html";
+        }, 1000);
+    </script>
+</body>
+</html> 
