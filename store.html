@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Coffee Store</title>
+    <link rel="stylesheet" href="store.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Coffee Store</h1>
+        <p>Welcome, <span id="welcomeUser"></span>!</p>
+        
+        <div class="products">
+            <h2>Our Products</h2>
+            <div class="product-list">
+                <div class="product">
+                    <h3>Latte</h3>
+                    <p>Price: $5.00</p>
+                    <button onclick="addToCart('Latte', 5)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h3>Espresso</h3>
+                    <p>Price: $3.00</p>
+                    <button onclick="addToCart('Espresso', 3)">Add to Cart</button>
+                </div>
+                <div class="product">
+                    <h3>Cappuccino</h3>
+                    <p>Price: $4.00</p>
+                    <button onclick="addToCart('Cappuccino', 4)">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+
+        <div class="cart">
+            <h2>Your Cart</h2>
+            <div id="cartItems">Cart is empty</div>
+            <div id="total">Total: $0</div>
+            <button onclick="checkout()" id="checkoutBtn" disabled>Checkout</button>
+        </div>
+
+        <div class="nav">
+            <a href="dashbord.html">Dashboard</a>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <script src="store.js"></script>
+</body>
+</html> 

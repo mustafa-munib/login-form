@@ -1,14 +1,24 @@
 <html>
 <head>
-    <title>User Dashboard - Coffee Shop</title>
+    <title>User Dashboard</title>
     <link rel="stylesheet" href="dashbord.css">
 </head>
 <body>
     <div class="dashbord-container">
-        <p id="welcomeUser"></p>
-        <h1>Welcome to Coffee Shop</h1>
-        <button id="logoutBtn">Logout</button>
-        <p>This is the user dashboard. You can view your orders and profile here.</p>
+        <h1>User Dashboard</h1>
+        <p>Welcome, <span id="welcomeUser"></span>!</p>
+        
+        <div class="nav-buttons">
+            <a href="store.html" class="nav-btn">Go to Store</a>
+            <button onclick="logout()" class="logout-btn">Logout</button>
+        </div>
+
+        <div class="orders-section">
+            <h2>Your Orders</h2>
+            <div id="ordersList">
+                <p>No orders yet. Visit the store to place orders!</p>
+            </div>
+        </div>
     </div>
     <script>
         document.addEventListener("DOMContentLoaded", function () {
@@ -16,16 +26,17 @@
             const role = localStorage.getItem("userRole");
             const welcomeText = document.getElementById("welcomeUser");
             if (username && role === "user") {
-                welcomeText.textContent = `Welcome, ${username}`;
+                welcomeText.textContent = username;
             } else {
                 window.location.href = "index.html";
             }
-            document.getElementById("logoutBtn").addEventListener("click", function () {
-                localStorage.removeItem("loggedInUser");
-                localStorage.removeItem("userRole");
-                window.location.href = "logout.html";
-            });
         });
+
+        function logout() {
+            localStorage.removeItem("loggedInUser");
+            localStorage.removeItem("userRole");
+            window.location.href = "logout.html";
+        }
     </script>
 </body>
 </html> 
